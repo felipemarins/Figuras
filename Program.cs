@@ -27,8 +27,8 @@ namespace Figuras
                         Menu menuCriacao = new Menu("Menu de criação de figuras\n",
                             new List<String>
                             {
-                            "Criar retângulo",
-                            "Voltar"
+                                "Criar retângulo",
+                                "Voltar"
                             }
                         );
                         while (menuCriacao.ContinuarMenu)
