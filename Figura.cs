@@ -13,4 +13,10 @@ public class Figura
     {
         get { return this._perimetro; }
     }
+
+    public void ImprimirFigura()
+    {
+        Console.WriteLine("Area: {0}", this.Area);
+        Console.WriteLine("Perimetro: {0}", this.Perimetro);
+    }
 }
