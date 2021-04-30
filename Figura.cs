@@ -21,7 +21,7 @@ public class Figura
 
     public void ImprimirFigura()
     {
-        Console.WriteLine("Nome da figura: {0}", this.NomeDaFigura);
+        Console.WriteLine("Figura: {0}", this.NomeDaFigura);
         Console.WriteLine("Area: {0}", this.Area);
         Console.WriteLine("Perimetro: {0}", this.Perimetro);
     }
