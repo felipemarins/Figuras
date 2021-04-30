@@ -2,8 +2,8 @@ using System;
 
 public class Retangulo : Figura
 {
-    protected double _altura;
-    protected double _largura;
+    private double _altura;
+    private double _largura;
     public double Altura
     {
         get { return this._altura; }
@@ -54,12 +54,12 @@ public class Retangulo : Figura
         this.AtualizarPerimetro();
     }
 
-    public void AtualizarArea()
+    private void AtualizarArea()
     {
         this._area = this._altura * this._largura;
     }
 
-    public void AtualizarPerimetro()
+    private void AtualizarPerimetro()
     {
         this._perimetro = this._altura * 2 + this._largura * 2;
     }
