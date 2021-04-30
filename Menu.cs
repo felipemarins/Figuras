@@ -3,20 +3,41 @@ using System.Collections.Generic;
 
 public class Menu
 {
-    public int Selecao;
+    private int _selecao;
 
-    public string TextoDeCima;
+    private string _textoDeCima;
 
-    public List<string> Opcoes = new List<string>();
+    private List<string> _opcoes = new List<string>();
 
-    public bool ContinuarMenu;
+    private bool _continuarMenu;
+
+    public int Selecao
+    {
+        get { return this._selecao; }
+    }
+
+    public string TextoDeCima
+    {
+        get { return this._textoDeCima; }
+    }
+
+    public List<string> Opcoes
+    {
+        get { return this._opcoes; }
+    }
+
+    public bool ContinuarMenu
+    {
+        get { return this._continuarMenu; }
+        set { this._continuarMenu = value; }
+    }
 
     public Menu(string textoAcima, List<string> opcoes)
     {
         this.ContinuarMenu = true;
-        this.Opcoes = opcoes;
-        this.Selecao = 0;
-        this.TextoDeCima = textoAcima;
+        this._opcoes = opcoes;
+        this._selecao = 0;
+        this._textoDeCima = textoAcima;
     }
 
     public void IniciarMenuPadrao()
@@ -26,27 +47,27 @@ public class Menu
             this.AtualizarMenu();
             this.PegarTecla();
         }
-        if (this.Selecao == this.Opcoes.Count - 1)
-            this.Selecao = 0;
+        if (this._selecao == this._opcoes.Count - 1)
+            this._selecao = 0;
         else
-            this.Selecao++;
+            this._selecao++;
     }
 
     public void AtualizarMenu()
     {
         Console.Clear();
         int i = 0;
-        Console.WriteLine(this.TextoDeCima);
-        foreach (string opcao in this.Opcoes)
+        Console.WriteLine(this._textoDeCima);
+        foreach (string opcao in this._opcoes)
         {
-            if (i == this.Selecao)
+            if (i == this._selecao)
             {
                 DestacarSelecao();
             }
 
             Console.WriteLine(opcao);
 
-            if (i == this.Selecao)
+            if (i == this._selecao)
             {
                 Console.ResetColor();
             }
@@ -61,10 +82,10 @@ public class Menu
         tecla = Console.ReadKey();
         if (tecla.Key == ConsoleKey.Enter)
             this.SairMenu();
-        else if (tecla.Key == ConsoleKey.DownArrow && this.Selecao + 1 < this.Opcoes.Count)
-            this.Selecao++;
-        else if (tecla.Key == ConsoleKey.UpArrow && this.Selecao - 1 >= 0)
-            this.Selecao--;
+        else if (tecla.Key == ConsoleKey.DownArrow && this._selecao + 1 < this._opcoes.Count)
+            this._selecao++;
+        else if (tecla.Key == ConsoleKey.UpArrow && this._selecao - 1 >= 0)
+            this._selecao--;
     }
 
     public void SairMenu()
