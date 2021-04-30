@@ -28,6 +28,7 @@ namespace Figuras
                             new List<String>
                             {
                                 "Criar retângulo",
+                                "Criar circulo",
                                 "Voltar"
                             }
                         );
@@ -36,10 +37,9 @@ namespace Figuras
                             menuCriacao.IniciarMenuPadrao();
                             if (menuCriacao.Selecao != 0)
                             {
+                                Console.Clear();
                                 if (menuCriacao.Selecao == 1)
                                 {
-                                    Console.Clear();
-
                                     Menu.DestacarSelecao();
                                     Console.WriteLine("Criando um novo retângulo\n");
                                     Console.ResetColor();
@@ -52,6 +52,21 @@ namespace Figuras
                                     Retangulo novoRetangulo = new Retangulo(altura, largura,
                                         Convert.ToString(listaDeFiguras.ContarFiguraEspecifica(typeof(Retangulo)) + 1));
                                     listaDeFiguras.Add(novoRetangulo);
+
+                                    Menu.EsperarPorTecla();
+                                }
+                                else if (menuCriacao.Selecao == 2)
+                                {
+                                    Menu.DestacarSelecao();
+                                    Console.WriteLine("Criando um novo círculo\n");
+                                    Console.ResetColor();
+
+                                    Console.Write("Raio: ");
+                                    double raio = Convert.ToDouble(Console.ReadLine());
+
+                                    Circulo novoCirculo = new Circulo(raio,
+                                        Convert.ToString(listaDeFiguras.ContarFiguraEspecifica(typeof(Circulo)) + 1));
+                                    listaDeFiguras.Add(novoCirculo);
 
                                     Menu.EsperarPorTecla();
                                 }
