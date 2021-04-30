@@ -45,10 +45,11 @@ public class Retangulo : Figura
         }
     }
 
-    public Retangulo(double altura, double largura)
+    public Retangulo(double altura, double largura, string nome)
     {
         this.Altura = altura;
         this.Largura = largura;
+        this._nomeDaFigura = "Retângulo " + nome;
         this.AtualizarArea();
         this.AtualizarPerimetro();
     }
