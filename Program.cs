@@ -7,7 +7,7 @@ namespace Figuras
     {
         static void Main(string[] args)
         {
-            List<Figura> listaDeFiguras = new List<Figura>();
+            ListaDeFiguras listaDeFiguras = new ListaDeFiguras();
 
             Menu menuPrincipal = new Menu("Menu principal\n",
                 new List<String>
@@ -49,7 +49,8 @@ namespace Figuras
                                     Console.Write("Largura: ");
                                     double largura = Convert.ToDouble(Console.ReadLine());
 
-                                    Retangulo novoRetangulo = new Retangulo(altura, largura, Convert.ToString(listaDeFiguras.Count + 1));
+                                    Retangulo novoRetangulo = new Retangulo(altura, largura,
+                                        Convert.ToString(listaDeFiguras.ContarFiguraEspecifica(typeof(Retangulo)) + 1));
                                     listaDeFiguras.Add(novoRetangulo);
 
                                     Menu.EsperarPorTecla();
