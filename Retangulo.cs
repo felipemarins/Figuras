@@ -50,8 +50,6 @@ public class Retangulo : Figura
         this.Altura = altura;
         this.Largura = largura;
         this._nomeDaFigura = "Retângulo " + nome;
-        this.AtualizarArea();
-        this.AtualizarPerimetro();
     }
 
     private void AtualizarArea()
